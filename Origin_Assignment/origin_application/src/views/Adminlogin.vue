@@ -3,7 +3,7 @@
     <form class="form-inline">
       <div class="form-group mb-2">
         <label for="staticEmail2" class="sr-only">Email</label>
-        <input
+        <b-form-input
           type="text"
           class="form-control-plaintext"
           value="Add label"
@@ -15,13 +15,11 @@
         Add Label
       </button>
     </form>
-    <table class="aligncenter">
-      <tr v-for="data in labels" :key="data">
-        <td>
-          <h5>{{ data }}</h5>
-        </td>
-      </tr>
-    </table>
+    <b-list-group class="listitems" v-for="data in labels" :key="data">
+      <b-list-group-item
+        ><h5>{{ data }}</h5></b-list-group-item
+      >
+    </b-list-group>
   </div>
 </template>
 <script>
@@ -37,12 +35,23 @@ export default {
     Addlabel() {
       this.labels.push(this.bindedlabel);
       this.$store.dispatch("setlabelset", this.labels);
+      this.bindedlabel = "";
     },
+  },
+  mounted() {
+    this.labels = this.$store.getters.getlabelset;
   },
 };
 </script>
 <style scoped>
 table.aligncenter {
   display: inline-table;
+}
+.list-group.listitems {
+  width: 14%;
+  margin-top: 19px;
+  align-items: center;
+  display: inline-block;
+  justify-content: center;
 }
 </style>

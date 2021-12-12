@@ -38,16 +38,17 @@
             >Admin</router-link
           >
         </a>
-        <button
+        <b-button
           v-if="
             this.$store.getters.getloginstate ||
             this.$store.getters.getadminlogin
           "
           @click="Signout()"
           class="Linkleft"
+          variant="danger"
         >
           LogOut
-        </button>
+        </b-button>
       </nav>
     </div>
     <router-view />
@@ -87,14 +88,16 @@ body {
 }
 .navbar {
   border-radius: 4px;
-  background-color: cornflowerblue;
+  background-color: #337ab7;
 }
 
 #nav {
   padding: 30px;
 }
 button.Linkleft {
-  float: right;
+    float: right;
+    margin-top: 8px;
+    padding-left: 14px;
 }
 
 #nav a {

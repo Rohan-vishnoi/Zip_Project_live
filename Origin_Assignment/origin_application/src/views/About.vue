@@ -8,16 +8,23 @@
           ref="fileInput"
           @change="zipmethods"
           :multiple="true"
+          style=" align-items: center"
         ></b-form-file>
       </div>
-      <input type="file" @change="zipmethods" accept="application/zip" />File -
-      Upload
+      <!-- <input
+        type="file"
+        @change="zipmethods"
+        style="display: none; align-items: center"
+        accept="application/zip"
+      />File - Upload -->
       <div class="container" @click="sessionpage()">
-        <table>
-          <tr v-for="data in showData" :key="data">
-            <img class="thumbnaildimensions" :src="data" />
-          </tr>
-        </table>
+        <a v-for="data in showData" :key="data">
+          <img
+            class="thumbnaildimensions"
+            :src="data"
+            style="width: 150px; height: 100px"
+          />
+        </a>
       </div>
     </div>
   </div>
@@ -71,6 +78,16 @@ export default {
 </script>
 
 <style scoped>
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
 .fileUploadBoreder {
   border: 1px solid #ccc;
 }

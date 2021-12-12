@@ -8,7 +8,7 @@
               <div class="card-body p-5 text-center">
                 <div class="form-outline mb-4">
                   <h3 class="textclass" for="typeEmailX-2">Email</h3>
-                  <input
+                  <b-form-input
                     type="email"
                     id="typeEmailX-2"
                     class="form-control form-control-lg"
@@ -18,7 +18,7 @@
 
                 <div class="form-outline mb-4">
                   <h3 class="textclass" for="typePasswordX-2">Password</h3>
-                  <input
+                  <b-form-input
                     type="password"
                     id="typePasswordX-2"
                     class="form-control form-control-lg"

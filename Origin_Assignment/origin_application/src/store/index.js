@@ -8,6 +8,7 @@ export default new Vuex.Store({
     loginstate: false,
     uploadfile: [],
     adminlogin: false,
+    labelset:[]
   },
   getters: {
     getloginstate(state) {
