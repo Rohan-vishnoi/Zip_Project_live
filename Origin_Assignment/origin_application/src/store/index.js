@@ -6,8 +6,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     loginstate: false,
-    uploadfile:[],
-    adminlogin: false
+    uploadfile: [],
+    adminlogin: false,
   },
   getters: {
     getloginstate(state) {
@@ -18,6 +18,9 @@ export default new Vuex.Store({
     },
     getadminlogin(state) {
       return state.adminlogin;
+    },
+    getlabelset(state) {
+      return state.labelset;
     }
   },
   mutations: {
@@ -29,6 +32,9 @@ export default new Vuex.Store({
     },
     Set_setadminstate(state, adminlogin) {
       state.adminlogin = adminlogin;
+    },
+    SET_setlabelset(state, labelset) {
+      state.labelset = labelset;
     }
   },
   actions: {
@@ -38,9 +44,12 @@ export default new Vuex.Store({
     UploadedFiles: ({ commit }, uploadfile) => {
       commit("Set_UploadedFiles", uploadfile);
     },
-    setadminlogin: ({commit}, adminlogin) => {
+    setadminlogin: ({ commit }, adminlogin) => {
       commit("Set_setadminstate", adminlogin);
-    }
+    },
+    setlabelset: ({ commit }, labelset) => {
+      commit("SET_setlabelset", labelset);
+    },
   },
   modules: {},
 });
