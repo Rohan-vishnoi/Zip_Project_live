@@ -26,6 +26,12 @@
 
         <b-form inline>
           <h3 class="headingthumbnails">{{ images.label }}</h3>
+          <b-button
+            v-if="images.label !== ''"
+            @click="DELETELABEL(images)"
+            variant="info"
+            >DEL</b-button
+          >
           <b-form-input
             v-if="images.label == ''"
             id="inline-form-input-name"
@@ -43,7 +49,7 @@
       </a>
     </div>
     <div class="containerimages" v-show="searchbar == true">
-       <a class="images" v-for="images in searchedarray" :key="images.label">
+      <a class="images" v-for="images in searchedarray" :key="images.label">
         <img
           :src="images.image"
           style="width: 200px; height: 200px; margin: 10px"
@@ -65,7 +71,7 @@
             >Add</b-button
           >
         </b-form>
-      </a> 
+      </a>
     </div>
   </div>
 </template>
@@ -89,6 +95,14 @@ export default {
       this.Imagesarray.forEach((element) => {
         if (image.image === element.image && image.label == "") {
           element.label = this.textlabel;
+        }
+      });
+      this.textlabel = "";
+    },
+    DELETELABEL(image) {
+      this.Imagesarray.forEach((element) => {
+        if (image.image === element.image && image.label !== "") {
+          element.label = "";
         }
       });
       this.textlabel = "";

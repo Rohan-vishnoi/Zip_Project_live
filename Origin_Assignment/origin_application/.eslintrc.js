@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+  mode: 'production'
   env: {
     node: true,
   },

@@ -11,12 +11,12 @@
           style=" align-items: center"
         ></b-form-file>
       </div>
-      <!-- <input
+      <input
         type="file"
         @change="zipmethods"
         style="display: none; align-items: center"
         accept="application/zip"
-      />File - Upload -->
+      />
       <div class="container" @click="sessionpage()">
         <a v-for="data in showData" :key="data">
           <img

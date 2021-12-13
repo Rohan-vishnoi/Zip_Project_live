@@ -57,14 +57,14 @@ export default {
   methods: {
     logintomainscreen() {
       if (
-        this.emailid === "avirohanvishnoi@gmail.com" &&
-        this.passwordentered === "rohan"
+        this.emailid === "normal@mail.com" &&
+        this.passwordentered === "normal"
       ) {
         this.$store.dispatch("setloginstate", true);
         this.$store.dispatch("setadminlogin", false);
         this.$router.push({ name: "About" });
       } else if (
-        this.emailid === "admin@gmail.com" &&
+        this.emailid === "admin@mail.com" &&
         this.passwordentered === "admin"
       ) {
         this.$store.dispatch("setloginstate", false);
